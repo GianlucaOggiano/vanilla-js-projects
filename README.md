@@ -1,0 +1,1 @@
+# Small Vanilla JavaScript projects
