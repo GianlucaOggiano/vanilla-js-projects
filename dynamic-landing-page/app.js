@@ -25,8 +25,6 @@ const getTime = () => {
   const output = `<span>${hours}</span>:<span>${minutes}</span>:<span>${seconds}</span>`;
 
   timeElement.innerHTML = output;
-
-  // console.log({ hours, minutes, seconds });
 };
 
 const setDailyGreeting = () => {
@@ -81,17 +79,22 @@ const getWeather = () => {
 };
 
 const fetchWeather = async (latitude, longitude) => {
-  const res = await fetch(
-    `${WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${WEATHER_KEY}&units=metric`,
-  );
-  const data = await res.json();
-  console.log(data);
-  const imgElement = document.createElement('img');
-  imgElement.src = ` http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-  console.log(imgElement);
-  weatherIconElement.appendChild(imgElement);
-  locationElement.innerHTML = `<p>${data.name}</p>`;
-  statsElement.innerHTML = `<span>${data.main.temp}°</span>`;
+  try {
+    const res = await fetch(
+      `${WEATHER_URL}lat=${latitude}&lon=${longitude}&appid=${WEATHER_KEY}&units=metric`,
+    );
+    if (!res.ok) {
+      throw new Error(res.statusText);
+    }
+    const data = await res.json();
+    const imgElement = document.createElement('img');
+    imgElement.src = ` http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    weatherIconElement.appendChild(imgElement);
+    locationElement.innerHTML = `<p>${data.name}</p>`;
+    statsElement.innerHTML = `<span>${data.main.temp}°</span>`;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 userElement.addEventListener('keypress', setUserName);
