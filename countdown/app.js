@@ -1,9 +1,12 @@
-const finalDate = 'January 23, 2021 09:59:00';
+const finalDate = 'March 23, 2021 09:59:00';
 const container = document.querySelector('.container');
+const eventDateElement = document.getElementById('eventdate');
 const daysElement = document.getElementById('days');
 const hoursElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
 const secondsElement = document.getElementById('seconds');
+
+eventDateElement.innerHTML = finalDate;
 
 const countDown = () => {
   const eventDate = new Date(finalDate).getTime();

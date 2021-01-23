@@ -30,6 +30,18 @@ body {
   justify-content: space-around;
 }
 
+.info {
+  text-align: center;
+  margin-bottom: 8.125rem;
+}
+
+.info p {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  margin-top: 0.875rem;
+  color: #8385a9;
+}
+
 .first {
   width: 100%;
   display: flex;
@@ -38,7 +50,6 @@ body {
 }
 .first h1 {
   text-transform: uppercase;
-  margin-bottom: 8.125rem;
   font-size: 1.5rem;
 }
 .first h1 > span {
