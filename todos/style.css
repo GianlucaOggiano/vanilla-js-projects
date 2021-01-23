@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
