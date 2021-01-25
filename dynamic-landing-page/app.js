@@ -1,5 +1,5 @@
 const WEATHER_KEY = '6835862829e250e3b8f7253cde3baa3b';
-const WEATHER_URL = `http://api.openweathermap.org/data/2.5/weather?`;
+const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?`;
 
 const timeElement = document.getElementById('time');
 const greetingElement = document.getElementById('greeting');
