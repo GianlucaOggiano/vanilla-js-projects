@@ -31,7 +31,6 @@ const createTodoElement = (todo) => {
     `;
   }
   todosElement.appendChild(todoElement);
-  return todoElement;
 };
 
 todos.forEach((todo) => {
